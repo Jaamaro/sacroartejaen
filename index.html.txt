@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sacro Arte Jaén - Inciensos y artículos cofrades de calidad.">
+  <title>Sacro Arte Jaén</title>
+
+  <style>
+    :root {
+      --morado: #5e2a84;
+      --dorado: #d4af37;
+      --blanco: #f8f8f8;
+      --gris: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--blanco);
+      color: var(--gris);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--morado);
+      color: var(--blanco);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #e6d7f3;
+    }
+
+    nav {
+      background-color: #4c2270;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    nav a {
+      color: var(--blanco);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--dorado);
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro h2 {
+      color: var(--morado);
+      margin-bottom: 1rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .producto {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: #fff;
+      transition: transform 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+      border-color: var(--morado);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .producto h3 {
+      margin: 0.8rem 0;
+      color: var(--morado);
+    }
+
+    .producto p {
+      padding: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--morado);
+      color: var(--blanco);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: var(--dorado);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sacro Arte Jaén</h1>
+    <p>Tradición, fragancia y devoción</p>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section class="intro">
+    <h2>Bienvenidos a Sacro Arte Jaén</h2>
+    <p>Especialistas en inciensos y artículos relacionados con la Semana Santa.  
+    Llevamos el arte sacro de Jaén a cada rincón con productos únicos y artesanales.</p>
+  </section>
+
+  <section id="productos">
+    <h2 style="text-align:center; margin-bottom:1.5rem;">Nuestros Productos</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1607958252370-8a1f09b20b91?auto=format&fit=crop&w=800&q=80" alt="Incienso artesanal">
+        <h3>Incienso artesanal</h3>
+        <p>Elaborado con resinas naturales para un aroma profundo y duradero.</p>
+      </div>
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1611831247012-61e69b82fc68?auto=format&fit=crop&w=800&q=80" alt="Velas y cirios">
+        <h3>Velas y cirios</h3>
+        <p>Velas decorativas y litúrgicas hechas a mano con cera de alta calidad.</p>
+      </div>
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=800&q=80" alt="Artículos cofrades">
+        <h3>Artículos cofrades</h3>
+        <p>Medallas, cordones y accesorios para hermandades y devotos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2 style="text-align:center; margin-top:2rem;">Contacto</h2>
+    <p style="text-align:center; margin-top:0.5rem;">
+      📍 Jaén, Andalucía <br>
+      📞 <a href="tel:+34123456789">+34 123 456 789</a> <br>
+      📧 <a href="mailto:info@sacroartejaen.com">info@sacroartejaen.com</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Sacro Arte Jaén · <a href="#">Todos los derechos reservados</a></p>
+  </footer>
+</body>
+</html>
