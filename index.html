@@ -6,12 +6,16 @@
   <meta name="description" content="Sacro Arte Jaén - Inciensos y artículos cofrades de calidad.">
   <title>Sacro Arte Jaén</title>
 
+  <!-- Tipografía tradicional -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --morado: #5e2a84;
-      --dorado: #d4af37;
+      --morado: #3e1764;
+      --morado-oscuro: #2e0f4a;
+      --dorado: #c8a032;
       --blanco: #f8f8f8;
-      --gris: #333;
+      --gris: #2b2b2b;
     }
 
     * {
@@ -21,7 +25,7 @@
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: "Playfair Display", serif;
       background-color: var(--blanco);
       color: var(--gris);
       line-height: 1.6;
@@ -31,31 +35,38 @@
       background-color: var(--morado);
       color: var(--blanco);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       letter-spacing: 1px;
     }
 
     header p {
       font-size: 1.1rem;
       margin-top: 0.5rem;
-      color: #e6d7f3;
+      color: #e7dcf0;
     }
 
     nav {
-      background-color: #4c2270;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--morado-oscuro);
       text-align: center;
-      padding: 0.5rem;
+      padding: 0.8rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     nav a {
       color: var(--blanco);
       text-decoration: none;
-      margin: 0 1rem;
-      font-weight: 500;
+      margin: 0 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
@@ -63,7 +74,7 @@
     }
 
     section {
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
@@ -76,6 +87,7 @@
     .intro h2 {
       color: var(--morado);
       margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
 
     .productos {
@@ -90,12 +102,13 @@
       overflow: hidden;
       text-align: center;
       background: #fff;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .producto:hover {
       transform: scale(1.03);
-      border-color: var(--morado);
+      border-color: var(--dorado);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .producto img {
@@ -107,6 +120,7 @@
     .producto h3 {
       margin: 0.8rem 0;
       color: var(--morado);
+      font-weight: 600;
     }
 
     .producto p {
@@ -115,10 +129,10 @@
     }
 
     footer {
-      background-color: var(--morado);
+      background-color: var(--morado-oscuro);
       color: var(--blanco);
       text-align: center;
-      padding: 1rem;
+      padding: 1.2rem;
       font-size: 0.9rem;
       margin-top: 2rem;
     }
@@ -131,6 +145,16 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -140,12 +164,12 @@
   </header>
 
   <nav>
-    <a href="#">Inicio</a>
-    <a href="#productos">Productos</a>
-    <a href="#contacto">Contacto</a>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="contacto.html">Contacto</a>
   </nav>
 
-  <section class="intro">
+ <section class="intro">
     <h2>Bienvenidos a Sacro Arte Jaén</h2>
     <p>Especialistas en inciensos y artículos relacionados con la Semana Santa.  
     Llevamos el arte sacro de Jaén a cada rincón con productos únicos y artesanales.</p>
