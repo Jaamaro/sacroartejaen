@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Productos de calidad de Sacro Arte Jaén. Inciensos, velas, cirios y artículos cofrades.">
+  <title>Productos - Sacro Arte Jaén</title>
+
+  <!-- Tipografía y colores -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --morado: #3e1764;
+      --morado-oscuro: #2e0f4a;
+      --dorado: #c8a032;
+      --blanco: #f8f8f8;
+      --gris: #2b2b2b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Playfair Display", serif;
+      background-color: var(--blanco);
+      color: var(--gris);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--morado);
+      color: var(--blanco);
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #e7dcf0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--morado-oscuro);
+      text-align: center;
+      padding: 0.8rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: var(--blanco);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--dorado);
+    }
+
+    section {
+      padding: 2.5rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro h2 {
+      color: var(--morado);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    .categoria {
+      margin-top: 3rem;
+    }
+
+    .categoria h3 {
+      color: var(--morado);
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--dorado);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .producto {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
+      border-color: var(--dorado);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .producto h4 {
+      margin: 0.8rem 0;
+      color: var(--morado);
+      font-weight: 600;
+    }
+
+    .producto p {
+      padding: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: var(--morado-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 1.2rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: var(--dorado);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Sacro Arte Jaén</h1>
+    <p>Productos de calidad para una experiencia cofrade perfecta</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section class="intro">
+    <h2>Nuestros Productos</h2>
+    <p>En <strong>Sacro Arte Jaén</strong> seleccionamos cuidadosamente cada artículo para ofrecer  
+    productos de la más alta calidad, elaborados con detalle y respeto a la tradición.  
+    Buscamos que cada fragancia, vela o símbolo acompañe tus momentos de devoción,  
+    creando una auténtica experiencia cofrade.</p>
+  </section>
+
+  <!-- CATEGORÍA: INCIENSOS -->
+  <section class="categoria">
+    <h3>Inciensos</h3>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1607958252370-8a1f09b20b91?auto=format&fit=crop&w=800&q=80" alt="Producto 1">
+        <h4>Producto 1</h4>
+        <p>Descripción breve del producto.</p>
+      </div>
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=800&q=80" alt="Producto 2">
+        <h4>Producto 2</h4>
+        <p>Descripción breve del producto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍA: VELAS Y CIRIOS -->
+  <section class="categoria">
+    <h3>Velas y Cirios</h3>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1611831247012-61e69b82fc68?auto=format&fit=crop&w=800&q=80" alt="Producto 3">
+        <h4>Producto 3</h4>
+        <p>Descripción breve del producto.</p>
+      </div>
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1592858206125-1ffde3b9b1f5?auto=format&fit=crop&w=800&q=80" alt="Producto 4">
+        <h4>Producto 4</h4>
+        <p>Descripción breve del producto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORÍA: ARTÍCULOS COFRADES -->
+  <section class="categoria">
+    <h3>Artículos Cofrades</h3>
+    <div class="productos">
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1600697395544-361ea8eafc88?auto=format&fit=crop&w=800&q=80" alt="Producto 5">
+        <h4>Producto 5</h4>
+        <p>Descripción breve del producto.</p>
+      </div>
+
+      <div class="producto">
+        <img src="https://images.unsplash.com/photo-1602526432604-b2df67e53a92?auto=format&fit=crop&w=800&q=80" alt="Producto 6">
+        <h4>Producto 6</h4>
+        <p>Descripción breve del producto.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sacro Arte Jaén · <a href="#">Todos los derechos reservados</a></p>
+  </footer>
+</body>
+</html>
