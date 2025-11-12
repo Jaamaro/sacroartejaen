@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contacto - Sacro Arte Jaén. Inciensos y artículos cofrades de calidad.">
-  <title>Contacto - Sacro Arte Jaén</title>
+  <meta name="description" content="Sacro Arte Jaén - Inciensos y artículos cofrades de calidad.">
+  <title>Sacro Arte Jaén</title>
 
-  <!-- Tipografía -->
+  <!-- Tipografía tradicional -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -74,80 +74,58 @@
     }
 
     section {
-      padding: 3rem 1rem;
-      max-width: 800px;
+      padding: 2.5rem 1rem;
+      max-width: 1000px;
       margin: auto;
+    }
+
+    .intro {
       text-align: center;
-    }
-
-    h2 {
-      color: var(--morado);
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.05rem;
-      color: #444;
       margin-bottom: 2rem;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-align: left;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-      font-weight: 600;
+    .intro h2 {
       color: var(--morado);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-family: "Playfair Display", serif;
-      resize: vertical;
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
-    input:focus, textarea:focus {
+    .producto {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: #fff;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.03);
       border-color: var(--dorado);
-      outline: none;
-      box-shadow: 0 0 5px rgba(200, 160, 50, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-    button {
-      background-color: var(--morado);
-      color: var(--blanco);
-      padding: 0.8rem 1.2rem;
-      border: none;
-      border-radius: 6px;
+    .producto img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .producto h3 {
+      margin: 0.8rem 0;
+      color: var(--morado);
       font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: var(--dorado);
-      color: var(--gris);
-    }
-
-    .info-contacto {
-      margin-top: 3rem;
-      font-size: 1rem;
-    }
-
-    .info-contacto p {
-      margin-bottom: 0.5rem;
+    .producto p {
+      padding: 0 1rem 1rem;
+      font-size: 0.95rem;
     }
 
     footer {
@@ -156,7 +134,7 @@
       text-align: center;
       padding: 1.2rem;
       font-size: 0.9rem;
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     footer a {
@@ -177,6 +155,32 @@
         font-size: 0.9rem;
       }
     }
+    .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+header .logo {
+  width: 80px;
+  height: auto;
+
+  /* Fondo circular translúcido */
+  background: rgba(255, 255, 255, 0.35); /* ajustable */
+  padding: 10px;
+  border-radius: 50%;
+
+  /* Efecto cristal */
+  backdrop-filter: blur(6px);
+
+  /* Para que el círculo no tape el fondo del header */
+  z-index: 2;
+}
+
+.header-text {
+  text-align: center;
+}
   </style>
 </head>
 
