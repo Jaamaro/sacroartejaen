@@ -155,13 +155,33 @@
         font-size: 0.9rem;
       }
     }
+    .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.header-text {
+  text-align: center;
+}
   </style>
 </head>
 <body>
   <header>
-    <h1>Sacro Arte Jaén</h1>
-    <p>Tradición, fragancia y devoción</p>
-  </header>
+  <div class="header-content">
+    <img src="https://imgur.com/a/X04vBkH.png" alt="Logo Sacro Arte Jaén" class="logo">
+    <div class="header-text">
+      <h1>Sacro Arte Jaén</h1>
+      <p>Tradición, fragancia y devoción</p>
+    </div>
+  </div>
+</header>
 
   <nav>
     <a href="index.html">Inicio</a>
@@ -212,3 +232,4 @@
   </footer>
 </body>
 </html>
+
