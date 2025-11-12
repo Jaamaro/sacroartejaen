@@ -165,14 +165,17 @@
 header .logo {
   width: 80px;
   height: auto;
-  /* Sombra blanca sólida y más grande */
-  filter: drop-shadow(6px 6px 12px rgba(255, 255, 255, 1));
-  transition: filter 0.3s ease;
-}
 
-header .logo:hover {
-  /* Sombra aún más grande al pasar el mouse */
-  filter: drop-shadow(8px 8px 16px rgba(255, 255, 255, 1));
+  /* Fondo circular translúcido */
+  background: rgba(255, 255, 255, 0.35); /* ajustable */
+  padding: 10px;
+  border-radius: 50%;
+
+  /* Efecto cristal */
+  backdrop-filter: blur(6px);
+
+  /* Para que el círculo no tape el fondo del header */
+  z-index: 2;
 }
 
 .header-text {
@@ -441,6 +444,7 @@ header .logo:hover {
   </footer>
 </body>
 </html>
+
 
 
 
