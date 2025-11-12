@@ -225,26 +225,38 @@
   <h2 style="text-align:center; margin-bottom:2rem;">Nuestros Servicios</h2>
   <div class="servicios">
     
+    <!-- Envío a domicilio -->
     <div class="servicio">
-      <img src="https://img.icons8.com/ios-filled/100/000000/home.png" alt="Envío a domicilio">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 64 64">
+        <path d="M2 32 L32 2 L62 32 V62 H2 Z"/>
+      </svg>
       <h3>Envío a domicilio</h3>
       <p>Ofrecemos distintos tipos de envío a domicilio. Elige la opción que más se ajuste a tus necesidades. El tiempo de entrega comienza a contarse desde que el pedido sale de nuestras instalaciones.</p>
     </div>
     
+    <!-- Pago seguro -->
     <div class="servicio">
-      <img src="https://img.icons8.com/ios-filled/100/000000/bank-card-back-side.png" alt="Pago seguro">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 64 64">
+        <rect x="4" y="20" width="56" height="24" rx="4"/>
+      </svg>
       <h3>Pago seguro</h3>
-      <p>Todas tus compras se realizan mediante pasarelas de pago seguras.</p>
+      <p>Todas tus compras se realizan mediante pasarelas de pago seguras. Y si no quedas satisfecho, te garantizamos la devolución de tu dinero.</p>
     </div>
     
+    <!-- Atención al cliente -->
     <div class="servicio">
-      <img src="https://img.icons8.com/ios-filled/100/000000/whatsapp.png" alt="Atención al cliente">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="16"/>
+      </svg>
       <h3>Atención al cliente</h3>
-      <p>Puedes contactarnos por WhatsApp (número) y te responderemos en menos de 24 horas.</p>
+      <p>Puedes contactarnos por WhatsApp (número) y te responderemos en horario de 9:00 a 14:00 horas.</p>
     </div>
     
+    <!-- Garantía de calidad -->
     <div class="servicio">
-      <img src="https://img.icons8.com/ios-filled/100/000000/ok.png" alt="Garantía de calidad">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icono" viewBox="0 0 64 64">
+        <path d="M16 32 L28 44 L48 16"/>
+      </svg>
       <h3>Garantía de calidad</h3>
       <p>En Sacro Arte Jaén aseguramos la calidad de cada uno de nuestros productos.</p>
     </div>
@@ -264,20 +276,18 @@
     flex: 1 1 200px;
     max-width: 250px;
     text-align: center;
-    transition: transform 0.3s;
     cursor: pointer;
   }
 
   .icono {
-    width: 100px; /* iconos más grandes */
-    height: 100px;
-    fill: #4B0082; /* morado oscuro por defecto */
+    width: 80px;
+    height: 80px;
+    fill: #4B0082; /* morado oscuro */
     transition: transform 0.3s, fill 0.3s;
   }
 
-  /* Cambiar color y agrandar al pasar el ratón */
   .servicio:hover .icono {
-    transform: scale(1.4);
+    transform: scale(1.3);
     fill: #6125c2; /* verde oscuro */
   }
 
@@ -291,6 +301,7 @@
     color: #555;
   }
 </style>
+
 
 
 
@@ -308,6 +319,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
