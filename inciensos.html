@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inciensos – Sacro Arte Jaén</title>
+
+  <!-- Tipografía -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --morado: #3e1764;
+      --morado-oscuro: #2e0f4a;
+      --dorado: #c8a032;
+      --blanco: #f8f8f8;
+      --gris: #2b2b2b;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: "Playfair Display", serif;
+      background-color: var(--blanco);
+      color: var(--gris);
+      line-height: 1.6;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      background-image: url('https://i.postimg.cc/C5nc7wM7/98.webp');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 2.5rem 1rem 2rem;
+      text-align: center;
+      color: var(--blanco);
+    }
+
+    header::before {
+      content:"";
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background-color: rgba(62, 23, 100, 0.6);
+      z-index:0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .logo {
+      width: 80px;
+      background: rgba(255,255,255,0.3);
+      padding: 10px;
+      border-radius: 50%;
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 { font-size: 2.4rem; }
+    header p { color:#e7dcf0; }
+
+    /* ---------- NAV ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: var(--morado-oscuro);
+      text-align: center;
+      padding: 0.8rem 0;
+    }
+
+    nav a {
+      color: var(--blanco);
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--dorado); }
+
+    /* ---------- SECCIONES ---------- */
+    section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--morado);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    /* ---------- CARRUSEL ESCAPARATE ---------- */
+    .escaparate-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+
+    .escaparate {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem;
+      scroll-behavior: smooth;
+    }
+
+    .escaparate::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .escaparate::-webkit-scrollbar-thumb {
+      background: var(--morado);
+      border-radius: 10px;
+    }
+
+    .incienso {
+      flex: 0 0 calc(33.33% - 1rem);
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      scroll-snap-align: center;
+      transition: transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .incienso:hover {
+      transform: scale(1.05);
+      border-color: var(--dorado);
+    }
+
+    .incienso img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #eee; /* Placeholder */
+    }
+
+    .incienso h3 {
+      margin-top: 0.8rem;
+      color: var(--morado);
+    }
+
+    .incienso p {
+      font-size: 0.95rem;
+      margin-top: 0.4rem;
+    }
+
+    .precio {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: var(--dorado);
+      font-size: 1.1rem;
+    }
+
+    /* ---------- FLECHAS ---------- */
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 45px;
+      height: 45px;
+      background: rgba(62,23,100,0.7);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.5rem;
+      z-index: 5;
+      user-select: none;
+    }
+
+    .flecha:hover {
+      background: rgba(62,23,100,0.9);
+    }
+
+    .flecha-izq { left: 5px; }
+    .flecha-der { right: 5px; }
+
+    @media (max-width: 800px) {
+      .incienso { flex: 0 0 70%; }
+    }
+
+    @media (max-width: 500px) {
+      .incienso { flex: 0 0 90%; }
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background-color: var(--morado-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    footer a { color: var(--dorado); text-decoration:none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <img src="https://i.postimg.cc/brXpwF4k/Chat-GPT-Image-12-nov-2025-22-00-16-removebg-preview.png" class="logo">
+    <div>
+      <h1>Inciensos</h1>
+      <p>Catálogo completo de Inciensos</p>
+    </div>
+    <img src="https://i.postimg.cc/brXpwF4k/Chat-GPT-Image-12-nov-2025-22-00-16-removebg-preview.png" class="logo">
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<section>
+  <h2>Nuestros Inciensos</h2>
+  <p>Catálogo artesanal de 15 tipos de incienso premium.</p>
+</section>
+
+<!-- ---------- ESCAPARATE CON FLECHAS ---------- -->
+<div class="escaparate-container">
+  
+  <div class="flecha flecha-izq" onclick="mover(-1)">❮</div>
+  <div class="flecha flecha-der" onclick="mover(1)">❯</div>
+
+  <div class="escaparate" id="escaparate">
+
+    <!-- 15 PRODUCTOS (lista completa lista para añadir imagen real) -->
+    <!-- Cada imagen = sustituir "placeholder" cuando tengas las reales -->
+
+    <div class="incienso">
+      <img src="" alt="Incienso 1">
+      <h3>Incienso Imperial</h3>
+      <p>Aroma profundo y ceremonial.</p>
+      <div class="precio">8,50 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 2">
+      <h3>Mirra Selecta</h3>
+      <p>Resina pura tradicional.</p>
+      <div class="precio">7,00 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 3">
+      <h3>Oro y Enigma</h3>
+      <p>Fragancia cálida, misteriosa.</p>
+      <div class="precio">9,00 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 4">
+      <h3>Resina del Desierto</h3>
+      <p>Aroma seco e intenso.</p>
+      <div class="precio">7,50 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 5">
+      <h3>Liturgia Real</h3>
+      <p>Matiz amaderado tradicional.</p>
+      <div class="precio">8,00 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 6">
+      <h3>Monte Sión</h3>
+      <p>Aroma limpio y perfumado.</p>
+      <div class="precio">6,50 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 7">
+      <h3>Incienso del Monasterio</h3>
+      <p>Dulce, profundo, estable.</p>
+      <div class="precio">7,80 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 8">
+      <h3>Jerusalén Antiguo</h3>
+      <p>Fragancia sagrada.</p>
+      <div class="precio">8,20 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 9">
+      <h3>Sacro Perfume</h3>
+      <p>Equilibrado y suave.</p>
+      <div class="precio">7,90 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 10">
+      <h3>Catedral</h3>
+      <p>Aroma alto y envolvente.</p>
+      <div class="precio">9,50 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 11">
+      <h3>Mirra & Ámbar</h3>
+      <p>Dulce y resinoso.</p>
+      <div class="precio">8,30 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 12">
+      <h3>Resina Sagrada</h3>
+      <p>Aromática y duradera.</p>
+      <div class="precio">7,40 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 13">
+      <h3>Gloria</h3>
+      <p>Toques florales y cálidos.</p>
+      <div class="precio">8,10 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 14">
+      <h3>Resina Pura</h3>
+      <p>Clásico e intenso.</p>
+      <div class="precio">6,90 €</div>
+    </div>
+
+    <div class="incienso">
+      <img src="" alt="Incienso 15">
+      <h3>Liturgia Oriental</h3>
+      <p>Aromas exóticos.</p>
+      <div class="precio">9,20 €</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ---------- JS PARA FLECHAS ---------- -->
+<script>
+  function mover(direccion) {
+    const carrusel = document.getElementById('escaparate');
+    const ancho = carrusel.clientWidth;
+    carrusel.scrollBy({ left: direccion * ancho, behavior: 'smooth' });
+  }
+</script>
+
+<footer>
+  <p>© 2025 Sacro Arte Jaén · <a href="#">Todos los derechos reservados</a></p>
+</footer>
+
+</body>
+</html>
