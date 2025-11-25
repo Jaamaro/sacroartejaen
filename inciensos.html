@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inciensos – Sacro Arte Jaén</title>
 
-  <!-- Tipografía -->
+  <!-- TIPOGRAFÍA -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -15,6 +15,8 @@
       --dorado: #c8a032;
       --blanco: #f8f8f8;
       --gris: #2b2b2b;
+      --verde: #0c8f2a;
+      --verde-oscuro: #0a6b20;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -25,34 +27,32 @@
       color: var(--gris);
       line-height: 1.6;
 
-      /* Imagen de fondo suave */
+      /* Fondo suave */
       background-image: url('https://i.postimg.cc/mkTvDcMj/incienso-ok.png');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      opacity: 1;
     }
 
-    /* Capa translúcida para bajar opacidad */
+    /* Capa para bajar opacidad */
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(255,255,255,0.90); /* Fondo blanco con 90% opacidad → imagen 10% */
-      pointer-events: none;
-      z-index: -1;
+      top:0; left:0;
+      width:100%; height:100%;
+      background-color: rgba(255,255,255,0.90); /* fondo 90% → imagen 10% */
+      z-index:-1;
     }
 
-    /* ---------- HEADER ---------- */
+    /* ------------------- HEADER ------------------- */
     header {
       background-image: url('https://i.postimg.cc/C5nc7wM7/98.webp');
       background-size: cover;
       background-position: center;
-      position: relative;
-      padding: 2.5rem 1rem 2rem;
-      text-align: center;
       color: var(--blanco);
+      text-align: center;
+      padding: 2.5rem 1rem;
+      position: relative;
     }
 
     header::before {
@@ -60,31 +60,31 @@
       position:absolute;
       top:0; left:0;
       width:100%; height:100%;
-      background-color: rgba(62, 23, 100, 0.6);
+      background-color: rgba(62,23,100,0.6);
       z-index:0;
     }
 
     .header-content {
       position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
+      z-index:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:1.5rem;
     }
 
     .logo {
-      width: 80px;
-      background: rgba(255,255,255,0.3);
-      padding: 10px;
-      border-radius: 50%;
+      width:80px;
+      background:rgba(255,255,255,0.3);
+      padding:10px;
+      border-radius:50%;
       backdrop-filter: blur(6px);
     }
 
-    header h1 { font-size: 2.4rem; }
-    header p { color:#e7dcf0; }
+    header h1 { font-size:2.4rem; }
+    header p { font-size:1.1rem; }
 
-    /* ---------- NAV ---------- */
+    /* ------------------- NAV ------------------- */
     nav {
       position: sticky;
       top: 0;
@@ -103,80 +103,140 @@
 
     nav a:hover { color: var(--dorado); }
 
-    /* ---------- SECCIONES ---------- */
+    /* ------------------- CONTENIDO ------------------- */
     section {
       padding: 2rem 1rem;
       max-width: 1100px;
       margin: auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
+      text-align:center;
     }
 
     h2 {
-      color: var(--morado);
-      margin-bottom: 1rem;
-      font-size: 2rem;
+      color:var(--morado);
+      font-size:2rem;
+      margin-bottom:1rem;
     }
 
-    /* ---------- GRID DE INCIENSOS ---------- */
+    /* ------------------- GRID ------------------- */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap:1.5rem;
+      margin-top:2rem;
     }
 
-    .incienso {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 1rem;
-      transition: transform 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .producto {
+      background:white;
+      padding:1rem;
+      border-radius:12px;
+      border:1px solid #ddd;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
 
-    .incienso:hover {
+    .producto:hover {
       transform: scale(1.05);
       border-color: var(--dorado);
     }
 
-    .incienso img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      background: #eee;
+    .producto img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:10px;
+      cursor:pointer;
+      background:#eee;
     }
 
-    .incienso h3 {
-      margin-top: 0.8rem;
-      color: var(--morado);
+    .producto h3 {
+      color:var(--morado);
+      margin-top:0.6rem;
+      font-size:1.25rem;
     }
 
-    .incienso p {
-      font-size: 0.95rem;
-      margin-top: 0.4rem;
+    .producto p {
+      font-size:0.95rem;
+      margin-top:0.4rem;
+      color:#444;
     }
 
     .precio {
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: var(--dorado);
-      font-size: 1.1rem;
+      margin-top:0.4rem;
+      font-weight:bold;
+      color:var(--dorado);
+      font-size:1.1rem;
     }
 
-    /* ---------- FOOTER ---------- */
+    .btn-cesta {
+      margin-top:0.8rem;
+      background:var(--verde);
+      color:white;
+      padding:0.6rem 1rem;
+      border:none;
+      font-size:1rem;
+      border-radius:6px;
+      cursor:pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-cesta:hover {
+      background:var(--verde-oscuro);
+    }
+
+    /* ---------------- MODAL ---------------- */
+    .modal {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.7);
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:1rem;
+    }
+
+    .modal-content {
+      background:white;
+      padding:1rem;
+      max-width:600px;
+      width:90%;
+      border-radius:12px;
+      position:relative;
+      animation: aparecer 0.3s ease;
+      text-align:center;
+    }
+
+    @keyframes aparecer {
+      from { transform:scale(0.8); opacity:0; }
+      to   { transform:scale(1); opacity:1; }
+    }
+
+    .modal-content img {
+      width:100%;
+      border-radius:10px;
+    }
+
+    .cerrar {
+      position:absolute;
+      top:10px; right:10px;
+      font-size:1.8rem;
+      color:#555;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
     footer {
-      background-color: var(--morado-oscuro);
-      color: var(--blanco);
-      text-align: center;
-      padding: 1.2rem;
-      margin-top: 2rem;
+      background:var(--morado-oscuro);
+      color:var(--blanco);
+      text-align:center;
+      padding:1.2rem;
+      margin-top:2rem;
     }
 
-    footer a { color: var(--dorado); text-decoration:none; }
-    footer a:hover { text-decoration: underline; }
+    footer a { color:var(--dorado); text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
+
   </style>
 </head>
 
@@ -187,7 +247,7 @@
     <img src="https://i.postimg.cc/brXpwF4k/Chat-GPT-Image-12-nov-2025-22-00-16-removebg-preview.png" class="logo">
     <div>
       <h1>Inciensos</h1>
-      <p>Catálogo completo de resinas y aromas</p>
+      <p>Catálogo completo de resinas aromáticas</p>
     </div>
     <img src="https://i.postimg.cc/brXpwF4k/Chat-GPT-Image-12-nov-2025-22-00-16-removebg-preview.png" class="logo">
   </div>
@@ -201,118 +261,166 @@
 
 <section>
   <h2>Nuestros Inciensos</h2>
-  <p>Catálogo artesanal de 15 tipos de incienso premium.</p>
+  <p>Selecciona un incienso para verlo ampliado. Todos los paquetes contienen <strong>50 gramos</strong>.</p>
 
+  <!-- GRID DE PRODUCTOS -->
   <div class="grid">
 
-    <!-- 15 inciensos -->
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Incienso Imperial</h3>
-      <p>Aroma profundo y ceremonial.</p>
-      <div class="precio">8,50 €</div>
+    <!-- 1. AMARGURA -->
+    <div class="producto">
+      <img src="Amargura.png" onclick="abrirModal(this)">
+      <h3>Amargura</h3>
+      <p>Fragancia suave, agradable y elegante. Perfuma de manera constante y prolongada.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Mirra Selecta</h3>
-      <p>Resina pura tradicional.</p>
-      <div class="precio">7,00 €</div>
+    <!-- 2. AROMAS DE SEVILLA -->
+    <div class="producto">
+      <img src="Aromas de Sevilla.png" onclick="abrirModal(this)">
+      <h3>Aromas de Sevilla</h3>
+      <p>Aroma dulce y equilibrado inspirado en la esencia tradicional hispalense.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Oro y Enigma</h3>
-      <p>Fragancia cálida y misteriosa.</p>
-      <div class="precio">9,00 €</div>
+    <!-- 3. AZAHAR -->
+    <div class="producto">
+      <img src="Azahar.png" onclick="abrirModal(this)">
+      <h3>Azahar</h3>
+      <p>Fragancia suave, agradable y elegante. Aroma floral intenso y prolongado.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Resina del Desierto</h3>
-      <p>Aroma seco e intenso.</p>
-      <div class="precio">7,50 €</div>
+    <!-- 4. CRISTO DE LAS TRES CAÍDAS -->
+    <div class="producto">
+      <img src="Cristo de las Tres Caídas.png" onclick="abrirModal(this)">
+      <h3>Cristo de las Tres Caídas</h3>
+      <p>Aroma cofrade tradicional, intenso y persistente.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Liturgia Real</h3>
-      <p>Matiz amaderado tradicional.</p>
-      <div class="precio">8,00 €</div>
+    <!-- 5. EL CACHORRO -->
+    <div class="producto">
+      <img src="El Cachorro.png" onclick="abrirModal(this)">
+      <h3>El Cachorro</h3>
+      <p>Fragancia profunda con matices cálidos y amaderados.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Monte Sión</h3>
-      <p>Aroma limpio y perfumado.</p>
-      <div class="precio">6,50 €</div>
+    <!-- 6. ESPERANZA DE TRIANA -->
+    <div class="producto">
+      <img src="Esperanza de Triana.png" onclick="abrirModal(this)">
+      <h3>Esperanza de Triana</h3>
+      <p>Aroma suave y ceremonial con notas tradicionales de resina.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Incienso del Monasterio</h3>
-      <p>Dulce y profundo.</p>
-      <div class="precio">7,80 €</div>
+    <!-- 7. GRAN PODER -->
+    <div class="producto">
+      <img src="Gran Poder.png" onclick="abrirModal(this)">
+      <h3>Gran Poder</h3>
+      <p>Incienso clásico de aroma penetrante y estable.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Jerusalén Antiguo</h3>
-      <p>Fragancia sagrada.</p>
-      <div class="precio">8,20 €</div>
+    <!-- 8. NAZARENO -->
+    <div class="producto">
+      <img src="Nazareno.png" onclick="abrirModal(this)">
+      <h3>Nazareno</h3>
+      <p>Aroma tradicional, intenso y perfecto para ambientes solemnes.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Sacro Perfume</h3>
-      <p>Equilibrado y suave.</p>
-      <div class="precio">7,90 €</div>
+    <!-- 9. NUESTRO PADRE JESÚS CAUTIVO -->
+    <div class="producto">
+      <img src="Ntro. Padre Jesús Cautivo.png" onclick="abrirModal(this)">
+      <h3>Ntro. Padre Jesús Cautivo</h3>
+      <p>Aroma profundo y equilibrado con matices ahumados.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Catedral</h3>
-      <p>Aroma alto y envolvente.</p>
-      <div class="precio">9,50 €</div>
+    <!-- 10. SAN GONZALO -->
+    <div class="producto">
+      <img src="San Gonzalo.png" onclick="abrirModal(this)">
+      <h3>San Gonzalo</h3>
+      <p>Fragancia dulce y armoniosa que perfuma con suavidad.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Mirra & Ámbar</h3>
-      <p>Dulce y resinoso.</p>
-      <div class="precio">8,30 €</div>
+    <!-- 11. TRES REYES -->
+    <div class="producto">
+      <img src="Tres Reyes.png" onclick="abrirModal(this)">
+      <h3>Tres Reyes</h3>
+      <p>Aroma cálido con notas resinosas y orientales.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Resina Sagrada</h3>
-      <p>Aromática y duradera.</p>
-      <div class="precio">7,40 €</div>
+    <!-- 12. ESPERANZA MACARENA -->
+    <div class="producto">
+      <img src="Esperanza Macarena.png" onclick="abrirModal(this)">
+      <h3>Esperanza Macarena</h3>
+      <p>Aroma floral suave con matices cálidos.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Gloria</h3>
-      <p>Toques florales.</p>
-      <div class="precio">8,10 €</div>
+    <!-- 13. MADRUGÁ -->
+    <div class="producto">
+      <img src="Madrugá.png" onclick="abrirModal(this)">
+      <h3>Madrugá</h3>
+      <p>Incienso solemne y profundo, ideal para ambientes de recogimiento.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Resina Pura</h3>
-      <p>Clásico e intenso.</p>
-      <div class="precio">6,90 €</div>
+    <!-- 14. CRISTO DE BURGOS -->
+    <div class="producto">
+      <img src="Cristo de Burgos.png" onclick="abrirModal(this)">
+      <h3>Cristo de Burgos</h3>
+      <p>Aroma intenso y duradero con notas tradicionales de resina.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
-    <div class="incienso">
-      <img src="" alt="">
-      <h3>Liturgia Oriental</h3>
-      <p>Aromas exóticos.</p>
-      <div class="precio">9,20 €</div>
+    <!-- 15. CRISTO DE LOS GITANOS -->
+    <div class="producto">
+      <img src="Cristo de los Gitanos.png" onclick="abrirModal(this)">
+      <h3>Cristo de los Gitanos</h3>
+      <p>Aroma potente con matices vibrantes y ahumados.</p>
+      <div class="precio">50gr – 4,50€</div>
+      <button class="btn-cesta">Añadir a la cesta</button>
     </div>
 
   </div>
 </section>
+
+<!-- ---------------- MODAL ---------------- -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <img id="modal-img" src="">
+  </div>
+</div>
+
+<script>
+  function abrirModal(img) {
+    document.getElementById("modal-img").src = img.src;
+    document.getElementById("modal").style.display = "flex";
+  }
+  function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
 
 <footer>
   <p>© 2025 Sacro Arte Jaén · <a href="#">Todos los derechos reservados</a></p>
