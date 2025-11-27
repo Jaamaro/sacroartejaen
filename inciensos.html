@@ -318,6 +318,20 @@
   cursor: pointer;
   border-radius: 6px;
 }
+    .cart-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cart-checkout.tarjeta {
+  background: var(--morado);
+}
+
+.cart-checkout.whatsapp {
+  background: #25D366;
+}
   </style>
 </head>
 <body>
@@ -629,5 +643,25 @@ document.getElementById("cart-button").addEventListener("click", () => {
 updateCartCount();
 renderCart();
 </script>
+  <script>
+function pagarStripe() {
+  // Sustituye el siguiente enlace por TU enlace real de Stripe Payment Link
+  window.location.href = "https://buy.stripe.com/TU_ENLACE_STRIPE";
+}
+
+function enviarWhatsapp() {
+  let mensaje = "Hola, quiero realizar este pedido:%0A%0A";
+
+  cart.forEach(item => {
+    mensaje += `• ${item.nombre} x${item.cantidad} – ${item.precio}€%0A`;
+  });
+
+  mensaje += `%0A➡ Total: ${document.getElementById("cart-total").innerText}%0A`;
+
+  // Cambia TU_NUMERO por tu número de teléfono con prefijo
+  window.open(`https://wa.me/34TU_NUMERO?text=${mensaje}`, "_blank");
+}
+</script>
+
 </body>
 </html>
