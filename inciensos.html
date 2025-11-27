@@ -320,85 +320,6 @@
 }
   </style>
 </head>
-<script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// ------------------ GUARDAR CARRITO ------------------
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  renderCart();
-}
-
-// ------------------ AÑADIR PRODUCTO ------------------
-function addToCart(nombre, precio, imagen) {
-  const existente = cart.find(item => item.nombre === nombre);
-
-  if (existente) {
-    existente.cantidad++;
-  } else {
-    cart.push({
-      nombre,
-      precio,
-      imagen,
-      cantidad: 1
-    });
-  }
-
-  saveCart();
-}
-
-// ------------------ ELIMINAR PRODUCTO ------------------
-function removeFromCart(nombre) {
-  cart = cart.filter(item => item.nombre !== nombre);
-  saveCart();
-}
-
-// ------------------ ACTUALIZAR CONTADOR ------------------
-function updateCartCount() {
-  const total = cart.reduce((sum, item) => sum + item.cantidad, 0);
-  document.getElementById("cart-count").textContent = total;
-}
-
-// ------------------ MOSTRAR CARRITO ------------------
-function renderCart() {
-  const contenedor = document.getElementById("cart-items");
-  const totalElemento = document.getElementById("cart-total");
-
-  contenedor.innerHTML = "";
-  let total = 0;
-
-  cart.forEach(item => {
-    total += item.precio * item.cantidad;
-
-    const div = document.createElement("div");
-    div.classList.add("cart-item");
-
-    div.innerHTML = `
-      <img src="${item.imagen}">
-      <div>
-        ${item.nombre} <br>
-        ${item.precio.toFixed(2)}€ x ${item.cantidad}
-      </div>
-      <button onclick="removeFromCart('${item.nombre}')">X</button>
-    `;
-
-    contenedor.appendChild(div);
-  });
-
-  totalElemento.textContent = total.toFixed(2) + "€";
-}
-
-// ------------------ ABRIR / CERRAR PANEL ------------------
-document.getElementById("cart-button").addEventListener("click", () => {
-  document.getElementById("cart-panel").classList.toggle("visible");
-});
-
-// ------------------ INICIAR ------------------
-updateCartCount();
-renderCart();
-</script>
-
 <body>
 
 <header>
@@ -628,6 +549,83 @@ renderCart();
 <footer>
   <p>© 2025 Sacro Arte Jaén · <a href="#">Todos los derechos reservados</a></p>
 </footer>
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// ------------------ GUARDAR CARRITO ------------------
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  renderCart();
+}
+
+// ------------------ AÑADIR PRODUCTO ------------------
+function addToCart(nombre, precio, imagen) {
+  const existente = cart.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad++;
+  } else {
+    cart.push({
+      nombre,
+      precio,
+      imagen,
+      cantidad: 1
+    });
+  }
+
+  saveCart();
+}
+
+// ------------------ ELIMINAR PRODUCTO ------------------
+function removeFromCart(nombre) {
+  cart = cart.filter(item => item.nombre !== nombre);
+  saveCart();
+}
+
+// ------------------ ACTUALIZAR CONTADOR ------------------
+function updateCartCount() {
+  const total = cart.reduce((sum, item) => sum + item.cantidad, 0);
+  document.getElementById("cart-count").textContent = total;
+}
+
+// ------------------ MOSTRAR CARRITO ------------------
+function renderCart() {
+  const contenedor = document.getElementById("cart-items");
+  const totalElemento = document.getElementById("cart-total");
+
+  contenedor.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.precio * item.cantidad;
+
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+
+    div.innerHTML = `
+      <img src="${item.imagen}">
+      <div>
+        ${item.nombre} <br>
+        ${item.precio.toFixed(2)}€ x ${item.cantidad}
+      </div>
+      <button onclick="removeFromCart('${item.nombre}')">X</button>
+    `;
+
+    contenedor.appendChild(div);
+  });
+
+  totalElemento.textContent = total.toFixed(2) + "€";
+}
+
+// ------------------ ABRIR / CERRAR PANEL ------------------
+document.getElementById("cart-button").addEventListener("click", () => {
+  document.getElementById("cart-panel").classList.toggle("visible");
+});
+
+// ------------------ INICIAR ------------------
+updateCartCount();
+renderCart();
+</script>
 </body>
 </html>
