@@ -181,6 +181,88 @@ header .logo {
 .header-text {
   text-align: center;
 }
+    /* --- CARRITO --- */
+.cart-icon {
+  float: right;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+}
+
+#cart-count {
+  background: var(--dorado);
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 4px;
+  font-size: 0.9rem;
+}
+
+.cart-panel {
+  position: absolute;
+  right: 10px;
+  top: 60px;
+  width: 300px;
+  background: white;
+  border: 2px solid var(--morado);
+  border-radius: 10px;
+  padding: 1rem;
+  z-index: 100;
+  display: none;
+}
+
+.cart-panel.visible {
+  display: block;
+}
+
+.cart-panel h3 {
+  margin-bottom: 0.5rem;
+  color: var(--morado);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.cart-item button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 3px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.cart-total {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.cart-checkout {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--morado);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
   </style>
 </head>
 
@@ -272,6 +354,20 @@ header .logo {
     <a href="index.html">Inicio</a>
     <a href="productos.html">Productos</a>
     <a href="contacto.html">Contacto</a>
+    <a id="cart-button" class="cart-icon">
+  🛒 <span id="cart-count">0</span>
+</a>
+
+<div id="cart-panel" class="cart-panel hidden">
+  <h3>Carrito</h3>
+  <div id="cart-items"></div>
+
+  <div class="cart-total">
+    Total: <span id="cart-total">0.00€</span>
+  </div>
+
+  <button class="cart-checkout">Finalizar Pedido</button>
+</div>
   </nav>
 
   <section class="intro">
@@ -339,5 +435,83 @@ header .logo {
   <footer>
     <p>© 2025 Sacro Arte Jaén · <a href="#">Todos los derechos reservados</a></p>
   </footer>
+  <script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+// ------------------ GUARDAR CARRITO ------------------
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+  renderCart();
+}
+
+// ------------------ AÑADIR PRODUCTO ------------------
+function addToCart(nombre, precio, imagen) {
+  const existente = cart.find(item => item.nombre === nombre);
+
+  if (existente) {
+    existente.cantidad++;
+  } else {
+    cart.push({
+      nombre,
+      precio,
+      imagen,
+      cantidad: 1
+    });
+  }
+
+  saveCart();
+}
+
+// ------------------ ELIMINAR PRODUCTO ------------------
+function removeFromCart(nombre) {
+  cart = cart.filter(item => item.nombre !== nombre);
+  saveCart();
+}
+
+// ------------------ ACTUALIZAR CONTADOR ------------------
+function updateCartCount() {
+  const total = cart.reduce((sum, item) => sum + item.cantidad, 0);
+  document.getElementById("cart-count").textContent = total;
+}
+
+// ------------------ MOSTRAR CARRITO ------------------
+function renderCart() {
+  const contenedor = document.getElementById("cart-items");
+  const totalElemento = document.getElementById("cart-total");
+
+  contenedor.innerHTML = "";
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.precio * item.cantidad;
+
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+
+    div.innerHTML = `
+      <img src="${item.imagen}">
+      <div>
+        ${item.nombre} <br>
+        ${item.precio.toFixed(2)}€ x ${item.cantidad}
+      </div>
+      <button onclick="removeFromCart('${item.nombre}')">X</button>
+    `;
+
+    contenedor.appendChild(div);
+  });
+
+  totalElemento.textContent = total.toFixed(2) + "€";
+}
+
+// ------------------ ABRIR / CERRAR PANEL ------------------
+document.getElementById("cart-button").addEventListener("click", () => {
+  document.getElementById("cart-panel").classList.toggle("visible");
+});
+
+// ------------------ INICIAR ------------------
+updateCartCount();
+renderCart();
+</script>
 </body>
 </html>
