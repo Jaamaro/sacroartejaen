@@ -366,7 +366,11 @@ header .logo {
     Total: <span id="cart-total">0.00€</span>
   </div>
 
-  <button class="cart-checkout">Finalizar Pedido</button>
+  <div class="cart-actions">
+  <button class="cart-checkout tarjeta" onclick="pagarStripe()">Pagar con tarjeta</button>
+  <button class="cart-checkout whatsapp" onclick="enviarWhatsapp()">Pedido por WhatsApp</button>
+</div>
+
 </div>
   </nav>
 
